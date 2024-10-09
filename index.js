@@ -1,6 +1,5 @@
 const CryptoJs = require('crypto-js');
 
-
 class Block {
 
     constructor(timestamp, transactions, previousHash = '') {
@@ -12,7 +11,7 @@ class Block {
     }
   
     calculateHash() {
-      return CryptoJS.SHA256(this.timestamp + this.previousHash + JSON.stringify(this.transactions) + this.nonce).toString();
+      return CryptoJs.SHA256(this.timestamp + this.previousHash + JSON.stringify(this.transactions) + this.nonce).toString();
     }
   
     toString() {
@@ -70,24 +69,6 @@ class Blockchain {
       this.pendingTransactions.push(transaction);
     }
   
-    getBalanceOfAddress(address) {
-      let balance = 0;
-  
-      for (const block of this.chain) {
-        for (const trans of block.transactions) {
-          if (trans.sender === address) {
-            balance -= trans.amount;
-          }
-  
-          if (trans.receiver === address) {
-            balance += trans.amount;
-          }
-        }
-      }
-  
-      return balance;
-    }
-  
     
     isChainValid() {
       for (let i = 1; i < this.chain.length; i++) {
@@ -102,6 +83,22 @@ class Blockchain {
           return false;
         }
       }
-      return true;
-    }
+    return true;
   }
+}
+
+let myCoin = new Blockchain();
+
+myCoin.createTransaction(new Transaction(50, "Alice", "Bob"));
+myCoin.createTransaction(new Transaction(20, "Bob", "Charlie"));
+
+myCoin.addBlock();
+
+myCoin.createTransaction(new Transaction(30, "Charlie", "Alice"));
+myCoin.addBlock();
+
+myCoin.chain.forEach(block => {
+  console.log(block.toString());
+});
+
+console.log('Is blockchain valid?', myCoin.isChainValid());
