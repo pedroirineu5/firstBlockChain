@@ -12,13 +12,13 @@ para clonar o repositório do projeto em sua máquina local.
 git clone https://github.com/pedroirineu5/firstBlockChain.git
 ```
 
-para instalar as dependências do projeto e por fim,
+para instalar as dependências do projeto
 
 ```bash
 npm install
 ```
 
-para rodar o arquivo `index.js` projeto
+ e por fim, para rodar o arquivo `index.js` basta digitar
 
 ```bash
 node index.js
