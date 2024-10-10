@@ -2,7 +2,7 @@
 Uma blockchain bastante simples feita em Javascript para testar tudo que foi aprendido no último módulo do projeto de bolsas da compass UOL.
 
 ## pré requisitos
-- ⚠ !(Node.js v20.18.0LTS)[https://nodejs.org/en]
+- ⚠ [Node.js v20.18.0LTS](https://nodejs.org/en)
 
 ## Para rodar o projeto
 No seu diretório escolhido, abra o terminal e digite em sequência os seguintes comandos:
