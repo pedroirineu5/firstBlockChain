@@ -8,7 +8,7 @@ class Block {
       this.previousHash = previousHash;       
       this.hash = this.calculateHash();       
     }
-  
+  // cálculo do hash
     calculateHash() {
       return CryptoJs.SHA256(this.timestamp + this.previousHash + JSON.stringify(this.transactions)).toString();
     }
@@ -69,6 +69,7 @@ class Blockchain {
     
     isChainValid() {
 
+        // função para percorrer a lista/chain
       for (let i = 1; i < this.chain.length; i++) {
         const currentBlock = this.chain[i];
         const previousBlock = this.chain[i - 1];
@@ -94,7 +95,7 @@ myCoin.addBlock();
 myCoin.createTransaction(new Transaction(10,"Ricardo","Irineu"));
 myCoin.addBlock();
 
-//Fraude
+//Fraude, apenas para testar a função de validação da blockchain.
 //myCoin.chain[1].transactions[0] = 1000;
 
 
