@@ -25,4 +25,4 @@ node index.js
 ```
 ## Funcionalidades
 
-O blockchain criado simula transações financeiras entre endereços, mantém um registro histórico dessas transações e, além de calcular os saldos dos participantes, fornece a funcionalidade de verificação da integridade do blockchain.
+O blockchain criado simula transações financeiras entre endereços, mantém um registro histórico dessas transações e, fornece a funcionalidade de verificação da integridade do blockchain.
